@@ -8,6 +8,8 @@ public class UserMobiles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String mobileNumber;
+    // here JoinColumn is use to specify which column in the  current table refers to the primary key of parent
+    // user_id is a foreign key in UserMobiles table
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
